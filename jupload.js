@@ -114,8 +114,9 @@
 			};
 
 			var url = that.settings.postUrl;
-			if (typeof that.settings.postUrl === "function")
-				url = that.settings.postUrl();
+			if (typeof url === "function"){
+				url = url();
+			}
 			xmlHttpRequest.open("POST", url, true);
 
 			var formData = new FormData();
